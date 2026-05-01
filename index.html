@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+
+<html class="dark scroll-smooth" lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Tetha - All Rounder</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Doto:wght@700&amp;family=JetBrains+Mono:wght@500&amp;family=Cormorant+Garamond:ital,wght@1,400&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://db.onlinewebfonts.com/c/d7a74ed36ff0603a3e41b6da32c47f03?family=Ndot+57+Aligned" rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-palette-key-color": "#7FBBB3",
+                        "secondary-palette-key-color": "#83C092",
+                        "tertiary-palette-key-color": "#A7C080",
+                        "neutral-palette-key-color": "#2E383C",
+                        "neutral-variant-palette-key-color": "#374145",
+                        "background": "#1E2326",
+                        "on-background": "#D3C6AA",
+                        "surface": "#252B2E",
+                        "surface-dim": "#15191C",
+                        "surface-bright": "#343E43",
+                        "surface-container-lowest": "#11161A",
+                        "surface-container-low": "#2A3338",
+                        "surface-container": "#2E383C",
+                        "surface-container-high": "#343E43",
+                        "surface-container-highest": "#3A4448",
+                        "on-surface": "#D3C6AA",
+                        "surface-variant": "#374145",
+                        "on-surface-variant": "#9DA9A0",
+                        "inverse-surface": "#D3C6AA",
+                        "inverse-on-surface": "#1E2326",
+                        "outline": "#859289",
+                        "outline-variant": "#414B50",
+                        "shadow": "#000000",
+                        "scrim": "#000000",
+                        "surface-tint": "#7FBBB3",
+                        "primary": "#7FBBB3",
+                        "on-primary": "#1E2326",
+                        "primary-container": "#414B50",
+                        "on-primary-container": "#A7C080",
+                        "inverse-primary": "#5A9A8F",
+                        "secondary": "#83C092",
+                        "on-secondary": "#1E2326",
+                        "secondary-container": "#414B50",
+                        "on-secondary-container": "#A7C080",
+                        "tertiary": "#A7C080",
+                        "on-tertiary": "#1E2326",
+                        "tertiary-container": "#414B50",
+                        "on-tertiary-container": "#D3C6AA",
+                        "error": "#E67E80",
+                        "on-error": "#1E2326",
+                        "error-container": "#4C3743",
+                        "on-error-container": "#E67E80",
+                        "primary-fixed": "#7FBBB3",
+                        "primary-fixed-dim": "#5A9A8F",
+                        "on-primary-fixed": "#1E2326",
+                        "on-primary-fixed-variant": "#374145",
+                        "secondary-fixed": "#83C092",
+                        "secondary-fixed-dim": "#5F8C6F",
+                        "on-secondary-fixed": "#1E2326",
+                        "on-secondary-fixed-variant": "#374145",
+                        "tertiary-fixed": "#A7C080",
+                        "tertiary-fixed-dim": "#7F9D5F",
+                        "on-tertiary-fixed": "#1E2326",
+                        "on-tertiary-fixed-variant": "#374145",
+                        "success": "#A7C080",
+                        "on-success": "#1E2326",
+                        "success-container": "#414B50",
+                        "on-success-container": "#D3C6AA"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin": "32px",
+                        "unit": "4px",
+                        "container-max": "1200px"
+                    },
+                    "fontFamily": {
+                        "body-main": ["Inter"],
+                        "poetry-italic": ["Cormorant Garamond"],
+                        "mono-label": ["JetBrains Mono"],
+                        "headline-md": ["JetBrains Mono"],
+                        "headline-lg": ["Apple New York"],
+                        "display-xl": ["doto"]
+                    },
+                    "fontSize": {
+                        "body-main": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "poetry-italic": ["22px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "mono-label": ["14px", { "lineHeight": "1", "fontWeight": "500" }],
+                        "headline-md": ["19px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "headline-lg": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "display-xl": ["80px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .dot-grid {
+            background-image: radial-gradient(#374145 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        .mesh-bg {
+            background: radial-gradient(circle at 50% 0%, rgba(127, 187, 179, 0.15), transparent 60%),
+                radial-gradient(circle at 0% 100%, rgba(131, 192, 146, 0.1), transparent 50%),
+                radial-gradient(circle at 100% 100%, rgba(167, 192, 128, 0.05), transparent 50%);
+        }
+
+        /* Icon Color Styling */
+        .icon-primary {
+            filter: brightness(0) saturate(100%) invert(59%) sepia(31%) saturate(442%) hue-rotate(120deg) brightness(102%) contrast(102%);
+        }
+
+        .icon-secondary {
+            filter: brightness(0) saturate(100%) invert(65%) sepia(30%) saturate(347%) hue-rotate(95deg) brightness(98%) contrast(100%);
+        }
+
+        .icon-tertiary {
+            filter: brightness(0) saturate(100%) invert(72%) sepia(20%) saturate(289%) hue-rotate(75deg) brightness(100%) contrast(100%);
+        }
+
+        .icon-on-surface-variant {
+            filter: brightness(0) saturate(100%) invert(62%) sepia(9%) saturate(343%) hue-rotate(170deg) brightness(98%) contrast(95%);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background text-on-background font-body-main text-body-main dot-grid min-h-screen relative overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+    <!-- TopNavBar -->
+    <nav
+        class="fixed top-6 left-1/2 -translate-x-1/2 z-50 flex justify-between items-center px-8 py-3 rounded-full bg-surface-container/50 backdrop-blur-md border border-outline-variant/50 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] w-[90%] max-w-4xl">
+        <div class="text-xl font-black text-primary font-['doto']">Tetha</div>
+        <div class="hidden md:flex items-center gap-6">
+            <a class="font-['Doto'] tracking-tighter uppercase text-sm text-primary border-b-2 border-primary pb-1 before:content-['•'] before:mr-1 hover:bg-surface-variant transition-all duration-300 rounded px-2"
+                href="#home">Home</a>
+            <a class="font-['Doto'] tracking-tighter uppercase text-sm text-on-surface-variant hover:text-primary transition-colors hover:bg-surface-variant transition-all duration-300 rounded px-2 py-1"
+                href="#about">About</a>
+            <a class="font-['Doto'] tracking-tighter uppercase text-sm text-on-surface-variant hover:text-primary transition-colors hover:bg-surface-variant transition-all duration-300 rounded px-2 py-1"
+                href="#tech">Tech</a>
+            <a class="font-['Doto'] tracking-tighter uppercase text-sm text-on-surface-variant hover:text-primary transition-colors hover:bg-surface-variant transition-all duration-300 rounded px-2 py-1"
+                href="#gallery">Gallery</a>
+            <a class="font-['Doto'] tracking-tighter uppercase text-sm text-on-surface-variant hover:text-primary transition-colors hover:bg-surface-variant transition-all duration-300 rounded px-2 py-1"
+                href="#ink">Ink</a>
+            <a class="font-['Doto'] tracking-tighter uppercase text-sm text-on-surface-variant hover:text-primary transition-colors hover:bg-surface-variant transition-all duration-300 rounded px-2 py-1"
+                href="#trail">Trail</a>
+        </div>
+        <button id="theme-toggle"
+            class="text-primary hover:bg-surface-variant transition-all duration-300 p-2 rounded-full flex items-center justify-center">
+            <span id="theme-icon" class="material-symbols-outlined text-lg">dark_mode</span>
+        </button>
+    </nav>
+    <main class="mesh-bg">
+        <!-- Hero Section -->
+        <section class="min-h-screen flex flex-col justify-center items-center relative px-gutter text-center"
+            id="home">
+            <canvas class="absolute inset-0 z-0 opacity-50" id="particle-canvas"></canvas>
+            <div class="relative z-10 space-y-8">
+                <h1 class="font-display-xl text-display-xl text-primary tracking-[0.2em] uppercase">TETHA</h1>
+                <p class="font-headline-md text-headline-md text-on-surface-variant lowercase">Pelajar · linux user ·
+                    photography</p>
+                <a class="inline-flex items-center gap-2 px-8 py-4 bg-surface-container-highest/60 backdrop-blur-lg border border-outline-variant rounded-full text-primary hover:bg-surface-variant hover:-translate-y-1 transition-all duration-300 font-mono-label text-mono-label"
+                    href="#about">
+                    Jelajahi <span class="material-symbols-outlined">arrow_downward</span>
+                </a>
+            </div>
+        </section>
+        <!-- About Section -->
+        <section class="py-32 px-gutter max-w-container-max mx-auto" id="about">
+            <div class="grid md:grid-cols-2 gap-16 items-stretch">
+                <div class="relative">
+                    <div class="h-full rounded-xl overflow-hidden border border-outline-variant relative">
+                        <img alt="Rakha Arteta Dewa" class="w-full h-full object-cover mix-blend-luminosity opacity-80"
+                            data-alt="A cinematic portrait of a young man with a thoughtful expression, illuminated by soft, moody directional light. The background is slightly out of focus, featuring deep Everforest dark greens and subtle neon undertones reflecting a retro-futuristic hacker aesthetic. The lighting highlights the contours of his face, creating a sense of quiet intensity and digital craftsmanship. The overall tone is organic yet technical, blending natural elements with a tech-savvy vibe."
+                            src="assets/img/aku.JPEG" />
+                        <div class="absolute inset-0 bg-surface-container/20"></div>
+                    </div>
+                </div>
+                <div class="space-y-8">
+                    <h2 class="font-headline-lg text-headline-lg text-primary">Rakha Arteta Dewa</h2>
+                    <p class="text-on-surface-variant leading-relaxed">
+                        <b>Rakha</b> atau yang memiliki nama lain "Tetha" adalah seorang pelajar
+                        yang berusaha memiliki banyak hobi bukan untuk masa depannya. Ia hanya
+                        peduli pada pandangan orang lain terhadap dirinya, dan ia ingin terlihat
+                        keren di mata orang sehingga mencoba dan menjalani banyak hal kecuali
+                        pada beberapa hal yang memang ia suka seperti <b>linux</b>, <b>fotografi</b>, 
+                        <b>puisi</b>,<b>menggambar</b>, dan <b>bersepeda</b>.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <span
+                            class="px-4 py-2 bg-surface-container/60 backdrop-blur-md border border-outline-variant rounded-full font-mono-label text-mono-label text-secondary flex items-center gap-2">
+                            Linux user
+                        </span>
+                        <span
+                            class="px-4 py-2 bg-surface-container/60 backdrop-blur-md border border-outline-variant rounded-full font-mono-label text-mono-label text-tertiary flex items-center gap-2">
+                            Photography
+                        </span>
+                        <span
+                            class="px-4 py-2 bg-surface-container/60 backdrop-blur-md border border-outline-variant rounded-full font-mono-label text-mono-label text-primary flex items-center gap-2">
+                            Poem
+                        </span>
+                        <span
+                            class="px-4 py-2 bg-surface-container/60 backdrop-blur-md border border-outline-variant rounded-full font-mono-label text-mono-label text-secondary flex items-center gap-2">
+                            Cycling
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Tech Lab Section -->
+        <section class="py-32 px-gutter max-w-container-max mx-auto border-t border-surface-variant" id="tech">
+            <div class="space-y-16">
+                <div class="text-center">
+                    <h2 class="font-headline-lg text-headline-lg text-primary mb-4">TECH LAB</h2>
+                    <p class="font-mono-label text-mono-label text-on-surface-variant">./rice --current</p>
+                </div>
+                <div
+                    class="rounded-xl border border-outline-variant overflow-hidden bg-surface-container-highest/50 backdrop-blur-md p-2">
+                    <div class="aspect-video relative rounded-lg overflow-hidden">
+                        <video alt="Desktop Rice Screenshot" class="w-full h-full object-cover" controls>
+                            <source src="assets/vid/hyprland.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                    <div
+                        class="p-6 bg-surface-container/60 backdrop-blur-lg border border-outline-variant rounded-xl hover:-translate-y-1 transition-transform">
+                        <div class="text-on-surface-variant text-sm mb-2 uppercase tracking-widest">Distro</div>
+                        <div class="font-mono-label text-mono-label text-primary text-xl">CachyOS</div>
+                    </div>
+                    <div
+                        class="p-6 bg-surface-container/60 backdrop-blur-lg border border-outline-variant rounded-xl hover:-translate-y-1 transition-transform">
+                        <div class="text-on-surface-variant text-sm mb-2 uppercase tracking-widest">DE</div>
+                        <div class="font-mono-label text-mono-label text-secondary text-xl">Hyprland</div>
+                    </div>
+                    <div
+                        class="p-6 bg-surface-container/60 backdrop-blur-lg border border-outline-variant rounded-xl hover:-translate-y-1 transition-transform">
+                        <div class="text-on-surface-variant text-sm mb-2 uppercase tracking-widest">Terminal</div>
+                        <div class="font-mono-label text-mono-label text-tertiary text-xl">Kitty</div>
+                    </div>
+                    <div
+                        class="p-6 bg-surface-container/60 backdrop-blur-lg border border-outline-variant rounded-xl hover:-translate-y-1 transition-transform">
+                        <div class="text-on-surface-variant text-sm mb-2 uppercase tracking-widest">Config</div>
+                        <div class="font-mono-label text-mono-label text-primary text-xl">Caelestia</div>
+                    </div>
+                    <div
+                        class="p-6 bg-surface-container/60 backdrop-blur-lg border border-outline-variant rounded-xl hover:-translate-y-1 transition-transform">
+                        <div class="text-on-surface-variant text-sm mb-2 uppercase tracking-widest">Note</div>
+                        <div class="font-mono-label text-mono-label text-secondary text-xl">Obsidian</div>
+                    </div>
+                    <div
+                        class="p-6 bg-surface-container/60 backdrop-blur-lg border border-outline-variant rounded-xl hover:-translate-y-1 transition-transform">
+                        <div class="text-on-surface-variant text-sm mb-2 uppercase tracking-widest">Font</div>
+                        <div class="font-mono-label text-mono-label text-tertiary text-xl">Ndot</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Visual Gallery Section -->
+        <section class="py-32 px-gutter max-w-container-max mx-auto border-t border-surface-variant" id="gallery">
+            <div class="space-y-12">
+                <div class="flex flex-col md:flex-row justify-between items-end gap-6">
+                    <h2 class="font-headline-lg text-headline-lg text-primary uppercase">Visual Gallery</h2>
+                    <div class="flex gap-4">
+                        <button data-filter="all"
+                            class="filter-btn px-6 py-2 bg-primary text-on-primary rounded-full font-mono-label text-mono-label transition-colors">All</button>
+                        <button data-filter="photography"
+                            class="filter-btn px-6 py-2 bg-surface-container/60 backdrop-blur-md border border-outline-variant text-on-surface rounded-full font-mono-label text-mono-label hover:bg-surface-variant transition-colors">Photography</button>
+                        <button data-filter="illustration"
+                            class="filter-btn px-6 py-2 bg-surface-container/60 backdrop-blur-md border border-outline-variant text-on-surface rounded-full font-mono-label text-mono-label hover:bg-surface-variant transition-colors">Illustration</button>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Gallery Item 1 -->
+                    <div class="gallery-item group relative aspect-[4/5] rounded-xl overflow-hidden border border-outline-variant bg-surface-container"
+                        data-category="photography">
+                        <img alt="Coastal landscape"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+                            data-alt="A serene coastal landscape captured during blue hour, featuring calm ocean waters gently meeting a rocky shore. The scene is enveloped in a cool, misty atmosphere with muted tones of teal, gray, and deep green, aligning with the Everforest palette. The photography exhibits a minimalist, slightly moody aesthetic, emphasizing the organic tranquility and natural textures of the environment."
+                            src="assets/img/fotoa.jpg" />
+                        <div
+                            class="absolute top-4 right-4 px-2 py-2 bg-background/60 backdrop-blur-md rounded-full border border-outline-variant">
+                            <img src="assets/icon/foto.svg" alt="Photography" class="w-4 h-4 icon-primary" /></div>
+                    </div>
+                    <!-- Gallery Item 2 -->
+                    <div class="gallery-item group relative aspect-[4/5] rounded-xl overflow-hidden border border-outline-variant bg-surface-container"
+                        data-category="illustration">
+                        <img alt="Abstract geometric art"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+                            data-alt="An abstract digital illustration featuring precise, generative geometric patterns and soft, frosted translucent layers. The composition uses a minimalist dot-grid background with subtle gradient meshes in earthy greens and soft terracottas. The visual style is retro-futuristic and glassmorphic, presenting a highly structured yet soft and approachable aesthetic that feels like a meticulously crafted digital instrument."
+                            src="assets/img/gamb.JPG" />
+                        <div
+                            class="absolute top-4 right-4 px-2 py-2 bg-background/60 backdrop-blur-md rounded-full border border-outline-variant">
+                            <img src="assets/icon/gambar.svg" alt="Illustration" class="w-4 h-4 icon-tertiary" /></div>
+                    </div>
+                    <!-- Gallery Item 3 -->
+                    <div class="gallery-item group relative aspect-[4/5] rounded-xl overflow-hidden border border-outline-variant bg-surface-container"
+                        data-category="photography">
+                        <img alt="Mountain peak at dusk"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+                            data-alt="A dramatic mountain peak viewed at dusk, partially obscured by low-hanging clouds and mist. The lighting is soft and diffused, creating a low-contrast, moody scene dominated by dark greens, charcoals, and subtle purple hues from the fading light. The image captures a sense of vast, quiet isolation and raw natural beauty, perfectly complementing a minimalist, dark-mode design system."
+                            src="assets/img/fotob.JPG" />
+                        <div
+                            class="absolute top-4 right-4 px-2 py-2 bg-background/60 backdrop-blur-md rounded-full border border-outline-variant">
+                            <img src="assets/icon/foto.svg" alt="Photography" class="w-4 h-4 icon-primary" /></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Ink / Poetry Section -->
+        <section class="py-32 bg-surface-dim border-y border-surface-variant relative overflow-hidden" id="ink">
+            <div
+                class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(103,55,80,0.1),transparent_70%)] pointer-events-none">
+            </div>
+            <div class="max-w-3xl mx-auto px-gutter text-center relative z-10 space-y-12">
+                <h2 class="font-headline-lg text-headline-lg text-tertiary">Ada Dalam Pikiran</h2>
+                <div id="poem-container"
+                    class="font-poetry-italic text-poetry-italic text-on-surface-variant space-y-6 transition-opacity duration-300">
+                    <p>Ibarat aku sebuah tongkat,<br />Lagaknya bagai banyak bakat.</p>
+                    <p>Oleng, jatuh pun tak kuat mengangkat,<br />Vokal pun bagai tersekat.</p>
+                    <p>Ekonomi pun tak bisa ku angkat,<br />Apalagi dirimu yang ku idamkan bagai pangkat.</p>
+                </div>
+                <div class="flex justify-center items-center gap-8 pt-8">
+                    <button id="poem-prev"
+                        class="p-3 rounded-full border border-outline-variant hover:bg-surface-variant transition-colors text-on-surface-variant">
+                        <span class="material-symbols-outlined">arrow_left</span>
+                    </button>
+                    <div id="poem-dots" class="flex gap-2">
+                        <div class="dot w-2 h-2 rounded-full bg-tertiary transition-colors"></div>
+                        <div class="dot w-2 h-2 rounded-full bg-outline-variant transition-colors"></div>
+                        <div class="dot w-2 h-2 rounded-full bg-outline-variant transition-colors"></div>
+                    </div>
+                    <button id="poem-next"
+                        class="p-3 rounded-full border border-outline-variant hover:bg-surface-variant transition-colors text-on-surface-variant">
+                        <span class="material-symbols-outlined">arrow_right</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- Trail Section -->
+        <section class="py-32 px-gutter max-w-container-max mx-auto" id="trail">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-12">
+                    <div>
+                        <h2 class="font-headline-lg text-headline-lg text-primary mb-4 uppercase">The Trail</h2>
+                        <p class="text-on-surface-variant">Menelusuri seluruh daratan hingga tak ada lagi yang memisahkan kita, berlalu lalang tanpa henti 
+                            dari pantai hingga gunung pun kudaki.</p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div
+                            class="p-6 bg-surface-container/40 backdrop-blur-lg border border-outline-variant rounded-xl text-center">
+                            <div class="font-display-xl text-display-xl text-secondary text-5xl mb-2">70</div>
+                            <div
+                                class="font-mono-label text-mono-label text-on-surface-variant uppercase tracking-widest">
+                                Rides</div>
+                        </div>
+                        <div
+                            class="p-6 bg-surface-container/40 backdrop-blur-lg border border-outline-variant rounded-xl text-center">
+                            <div class="font-display-xl text-display-xl text-primary text-5xl mb-2">5000+</div>
+                            <div
+                                class="font-mono-label text-mono-label text-on-surface-variant uppercase tracking-widest">
+                                km</div>
+                        </div>
+                        <div
+                            class="p-6 bg-surface-container/40 backdrop-blur-lg border border-outline-variant rounded-xl text-center">
+                            <div class="font-display-xl text-display-xl text-tertiary text-5xl mb-2">1500+</div>
+                            <div
+                                class="font-mono-label text-mono-label text-on-surface-variant uppercase tracking-widest">
+                                Climb (mdpl)</div>
+                        </div>
+                        <div
+                            class="p-6 bg-surface-container/40 backdrop-blur-lg border border-outline-variant rounded-xl text-center">
+                            <div class="font-display-xl text-display-xl text-secondary text-3xl mb-2 mt-2 truncate">
+                                Merapi</div>
+                            <div
+                                class="font-mono-label text-mono-label text-on-surface-variant uppercase tracking-widest mt-3">
+                                Fave</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative h-[600px] rounded-2xl overflow-hidden border border-outline-variant">
+                    <img alt="Cycling touring route" class="w-full h-full object-cover mix-blend-luminosity opacity-80"
+                        data-alt="A moody, atmospheric photograph of a solitary bicycle parked on a scenic mountain pass winding road. The environment is lush with deep forest greens, shrouded in morning fog, creating a profound sense of tranquility and adventure. The composition is balanced and minimalist, highlighting the connection between the mechanical precision of the bicycle and the raw, organic beauty of the natural landscape."
+                        src="assets/img/pit.JPG" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer
+        class="w-full py-12 px-8 flex flex-col md:flex-row justify-between items-center gap-6 bg-surface-container-lowest/40 backdrop-blur-md border-t border-outline-variant"
+        id="contact">
+        <div class="flex flex-col gap-2">
+            <div class="text-lg font-bold text-primary">Tetha</div>
+            <div class="font-['JetBrains_Mono'] text-xs uppercase tracking-widest text-primary">© 2024 TETHA. DESIGNED
+                WITH PRECISION.</div>
+        </div>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a class="px-3 py-2 bg-surface-container/60 backdrop-blur-md border border-outline-variant rounded-full text-sm text-on-surface-variant hover:text-primary hover:border-primary transition-colors inline-flex items-center justify-center"
+                href="https://www.instagram.com/rakdwhahwv/" title="Instagram"><img src="assets/icon/ig.svg" alt="Instagram" class="w-5 h-5 icon-secondary" /></a>
+            <a class="px-3 py-2 bg-surface-container/60 backdrop-blur-md border border-outline-variant rounded-full text-sm text-on-surface-variant hover:text-primary hover:border-primary transition-colors inline-flex items-center justify-center"
+                href="https://github.com/ArTetha-exe" title="GitHub"><img src="assets/icon/git.svg" alt="GitHub" class="w-5 h-5 icon-primary" /></a>
+            <a class="px-3 py-2 bg-surface-container/60 backdrop-blur-md border border-outline-variant rounded-full text-sm text-on-surface-variant hover:text-primary hover:border-primary transition-colors inline-flex items-center justify-center"
+                href="https://www.shutterstock.com/g/Stormz31" title="Shutterstock"><img src="assets/icon/shutterstock.svg" alt="Shutterstock" class="w-5 h-5 icon-primary" /></a>
+            <a class="px-3 py-2 bg-surface-container/60 backdrop-blur-md border border-outline-variant rounded-full text-sm text-on-surface-variant hover:text-primary hover:border-primary transition-colors inline-flex items-center justify-center"
+                href="https://x.com/emereskeww?s=21" title="X"><img src="assets/icon/X.png" alt="X" class="w-5 h-5 icon-on-surface-variant" /></a>
+        </div>
+        <div class="flex gap-4 font-['JetBrains_Mono'] text-xs uppercase tracking-widest text-on-surface-variant">
+            <a class="hover:text-primary transition-colors" href="#">Photography</a>
+            <a class="hover:text-primary transition-colors" href="#">Illustration</a>
+            <a class="text-primary font-bold" href="#">Contact</a>
+        </div>
+    </footer>
+    <script>
+        function createParticles() {
+            // Menggunakan ID canvas dari HTML (particle-canvas)
+            const canvas = document.getElementById('particle-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+
+            let width = window.innerWidth;
+            let height = window.innerHeight;
+            canvas.width = width;
+            canvas.height = height;
+
+            const particles = [];
+            for (let i = 0; i < 80; i++) {
+                particles.push({
+                    x: Math.random() * width,
+                    y: Math.random() * height,
+                    size: Math.random() * 3 + 1,
+                    speedX: Math.random() * 0.5 - 0.25,
+                    speedY: Math.random() * 0.5 - 0.25
+                });
+            }
+
+            function animate() {
+                requestAnimationFrame(animate);
+                ctx.clearRect(0, 0, width, height);
+
+                ctx.fillStyle = '#7fbbb3'; // Menggunakan warna tema (primary)
+                ctx.beginPath();
+                for (let i = 0; i < particles.length; i++) {
+                    let p = particles[i];
+
+                    // Pindahkan partikel
+                    p.x += p.speedX;
+                    p.y += p.speedY;
+
+                    // Wrapping jika keluar layar
+                    if (p.x < 0) p.x = width;
+                    if (p.x > width) p.x = 0;
+                    if (p.y < 0) p.y = height;
+                    if (p.y > height) p.y = 0;
+
+                    ctx.moveTo(p.x, p.y);
+                    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                }
+                ctx.fill();
+
+                // Menggambar garis yang menghubungkan partikel yang berdekatan
+                ctx.strokeStyle = 'rgba(127, 187, 179, 0.2)';
+                ctx.lineWidth = 1;
+                ctx.beginPath();
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i + 1; j < particles.length; j++) {
+                        let p1 = particles[i];
+                        let p2 = particles[j];
+                        let dx = p1.x - p2.x;
+                        let dy = p1.y - p2.y;
+                        let dist = Math.sqrt(dx * dx + dy * dy);
+
+                        if (dist < 100) {
+                            ctx.moveTo(p1.x, p1.y);
+                            ctx.lineTo(p2.x, p2.y);
+                        }
+                    }
+                }
+                ctx.stroke();
+            }
+
+            animate();
+
+            window.addEventListener('resize', () => {
+                width = window.innerWidth;
+                height = window.innerHeight;
+                canvas.width = width;
+                canvas.height = height;
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+
+            // --- Dark Mode Logic ---
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            const themeIcon = document.getElementById('theme-icon');
+            const htmlElement = document.documentElement;
+
+            themeToggleBtn.addEventListener('click', () => {
+                htmlElement.classList.toggle('dark');
+                if (htmlElement.classList.contains('dark')) {
+                    themeIcon.textContent = 'dark_mode';
+                } else {
+                    themeIcon.textContent = 'light_mode';
+                }
+            });
+
+            // --- Gallery Filter Logic ---
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update active state
+                    filterBtns.forEach(b => {
+                        b.classList.remove('bg-primary', 'text-on-primary');
+                        b.classList.add('bg-surface-container/60', 'text-on-surface');
+                    });
+                    btn.classList.add('bg-primary', 'text-on-primary');
+                    btn.classList.remove('bg-surface-container/60', 'text-on-surface');
+
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    galleryItems.forEach(item => {
+                        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                            item.style.display = 'block';
+                            item.animate([
+                                { opacity: 0, transform: 'scale(0.95)' },
+                                { opacity: 1, transform: 'scale(1)' }
+                            ], { duration: 300, fill: 'forwards' });
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // --- Poetry Carousel Logic ---
+            const poems = [
+                `<p>Ibarat aku sebuah tongkat,<br/>Lagaknya bagai banyak bakat.</p>
+             <p>Oleng, jatuh pun tak kuat mengangkat,<br/>Vokal pun bagai tersekat.</p>
+             <p>Ekonomi pun tak bisa ku angkat,<br/>Apalagi dirimu yang ku idamkan bagai pangkat..</p>`,
+
+                `<p>Visual ini tlah kulalui,<br/>Ingin ku berbenah diri.
+                <br/>Namun dirimu tlah pergi,<br/>Ceritaku pada sahabat pun terhenti.
+                <br/>Entahlah, ku tak ada tujuan lagi,<br/>Nan pikiranku hilang tiada bukti.
+                <br/>Tiada lagu baru tuk ku kaji<br/>Ibadah ku selalu pergi<br/>Apa ku bisa bila kau tak ada disiini</p>`,
+
+                `<p>Sebuah perjalanan,<br/>
+                    dimana ku selalu bersama teman teman terdekatku,<br/>
+                    berjalan kesana kemari menikmati angin<br/>
+                    hingga sore yang dirubungi jepretan kamera sebelahku</p>
+                <p>dimana kau pada saat itu?<br/>
+                    ku tak melihatmu ada disitu<br/>
+                    ku selalu mencari dimana kamu oh cintaku<br/>
+                    bahkan saat ku asyik bersama teman<br/>
+                    hatiku terus terdiam karna tak melihatmu yang indah itu<br/>
+                    aku hanya ingin dia tau,<br/>
+                    bahwa perasaan ini tak bukan drama semata<br/>
+                    akan tetapi mungkin balasan ku yang lama,<br/>
+                    karena memikirkanmu yang tak ada duanya</p>
+             `
+            ];
+            let currentPoem = 0;
+            const poemContainer = document.getElementById('poem-container');
+            const poemPrev = document.getElementById('poem-prev');
+            const poemNext = document.getElementById('poem-next');
+            const dots = document.querySelectorAll('.dot');
+
+            function updatePoem(index) {
+                poemContainer.style.opacity = 0;
+                setTimeout(() => {
+                    poemContainer.innerHTML = poems[index];
+                    poemContainer.style.opacity = 1;
+
+                    dots.forEach((dot, i) => {
+                        if (i === index) {
+                            dot.classList.remove('bg-outline-variant');
+                            dot.classList.add('bg-tertiary');
+                        } else {
+                            dot.classList.remove('bg-tertiary');
+                            dot.classList.add('bg-outline-variant');
+                        }
+                    });
+                }, 300);
+            }
+
+            poemPrev.addEventListener('click', () => {
+                currentPoem = (currentPoem - 1 + poems.length) % poems.length;
+                updatePoem(currentPoem);
+            });
+
+            poemNext.addEventListener('click', () => {
+                currentPoem = (currentPoem + 1) % poems.length;
+                updatePoem(currentPoem);
+            });
+        });
+    </script>
+</body>
+
+</html>
