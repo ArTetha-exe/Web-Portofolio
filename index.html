@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ARTTHA, bespoke editorial portfolio terinspirasi majalah seni independen, kontak cetak analog, dan kultur Linux ricing.">
+  <title>ARTTHA: Portfolio Editorial</title>
+
+  <!-- Google Fonts: Editorial Serifs & Technical Monospace -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,300;1,400;1,600&family=JetBrains+Mono:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+
+  <!-- Master Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Core Libraries (Deferred) -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+
+  <!-- Non-intrusive SVG Film Grain Overlay -->
+  <div id="grain-overlay" aria-hidden="true">
+    <svg width="100%" height="100%">
+      <filter id="film-grain">
+        <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="3" stitchTiles="stitch" />
+        <feColorMatrix type="saturate" values="0" />
+      </filter>
+      <rect width="100%" height="100%" filter="url(#film-grain)" fill="#000" />
+    </svg>
+  </div>
+
+  <!-- Burgundy Silk Curtain Transition Wipe -->
+  <div id="transition-curtain" aria-hidden="true">
+    <div class="curtain-left"></div>
+    <div class="curtain-right"></div>
+  </div>
+
+  <!-- Top Floating Minimalist Pill Navigation -->
+  <nav id="nav" aria-label="Navigasi Utama Situs">
+    <div class="nav-inner">
+      <button class="nav-pill active" data-section="home" aria-label="Ke Beranda">Home</button>
+      <button class="nav-pill" data-section="about" aria-label="Ke Tentang">About</button>
+      <button class="nav-pill" data-section="photos" aria-label="Ke Kontak Cetak Foto">Photos</button>
+      <button class="nav-pill" data-section="setup" aria-label="Ke Setup Hyprland">Set Up</button>
+      <button class="nav-pill" data-section="poem" aria-label="Ke Antologi Puisi">Poem</button>
+      <button class="nav-pill" data-section="cycling" aria-label="Ke Telemetri Sepeda">Cycling</button>
+    </div>
+  </nav>
+
+  <!-- Main Editorial Canvas -->
+  <main id="app">
+
+    <!-- ══════════════════════════════════════════════════════════════
+         1. HERO SECTION (Layered 3D Depth Collage)
+         ══════════════════════════════════════════════════════════════ -->
+    <section id="section-home" class="section" aria-label="Beranda">
+      <div class="hero-frame">
+        <!-- Layer 1: Background street photography -->
+        <div class="hero-layer hero-layer-bg">
+          <img src="assets/hero-bg.jpg" alt="Monokrom kerumunan jalanan kota dengan shallow depth of field" width="1920" height="1080" fetchpriority="high">
+        </div>
+
+        <!-- Layer 3: Foreground Subject Cutout -->
+        <div class="hero-layer hero-layer-fg">
+          <img src="assets/hero-subject.png" alt="Potret subjek berkacamata hitam dan mantel gelap" width="800" height="1000">
+        </div>
+
+        <!-- Hero CTA Button -->
+        <button class="hero-cta" data-section="about" aria-label="Lanjut ke bagian tentang">Lau Sape Mpuy? &rarr;</button>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         2. IDENTITY INTRODUCTION (Tactile Console Profile Card & Tactical Stat Bars)
+         ══════════════════════════════════════════════════════════════ -->
+    <section id="section-about" class="section" aria-label="Tentang Penulis">
+      <div class="section-header-editorial">
+        <span class="section-num">02 // PROFILE DOSSIER</span>
+        <h2 class="section-title-editorial">Identitas &amp; <em>Disiplin Logika</em></h2>
+      </div>
+
+      <!-- Outer Tactile Console Card with Mounted Edge Badges -->
+      <div class="about-console-card">
+        <!-- Mounted Edge Tabs & Micro-Badges -->
+        <div class="console-edge-bar top-edge">
+          <div class="edge-pill status-pill">
+            <span class="live-pulse-dot" aria-hidden="true"></span>
+            <span>AKTIF // YOGYAKARTA, ID</span>
+          </div>
+          <div class="edge-pill jump-pill">
+            <span>TERMINAL ID // RAKHA-X-ARTTHA</span>
+          </div>
+          <div class="edge-tab bookmark-tab" aria-hidden="true">
+            <span>DOSSIER · 2026</span>
+          </div>
+        </div>
+
+        <div class="about-console-grid">
+          <!-- Left Column: Asymmetric Notched Cutout & Overlapping Badges -->
+          <div class="about-profile-col">
+            <div class="notched-portrait-wrapper">
+              <!-- Asymmetric Notched Photo Frame -->
+              <div class="notched-portrait-frame">
+                <img src="assets/about-portrait.jpg" alt="Potret Rakha Arteta" width="600" height="750" loading="lazy">
+                <!-- Stepped Cutout Corner Notch Overlay -->
+                <div class="notch-accent top-right" aria-hidden="true"></div>
+                <div class="notch-accent bottom-left" aria-hidden="true"></div>
+              </div>
+
+              <!-- Overlapping Burgundy Frosted Name Tag -->
+              <div class="profile-frosted-tag">
+                <span class="tag-title">RAKHA X ARTTHA</span>
+                <span class="tag-sub">CREATIVE TECHNOLOGIST &amp; DEV</span>
+              </div>
+
+              <!-- Speech-Bubble / Pointer Metadata Pills -->
+              <div class="speech-pill loc-pill">
+                <span class="pill-icon">&#x25C9;</span>
+                <span>Yogyakarta, ID (7.7956° S, 110.3695° E)</span>
+              </div>
+              <div class="speech-pill edu-pill">
+                <span class="pill-icon">&#x25C8;</span>
+                <span>Informatika UPN "Veteran" Yogyakarta</span>
+              </div>
+            </div>
+
+            <!-- Authentic Bio Narrative -->
+            <div class="about-narrative-box">
+              <p>
+                Mahasiswa Informatika UPN "Veteran" Yogyakarta dengan minat dan pemahaman mendalam di bidang pemrograman C/C++, perancangan basis data relasional SQL, serta administrasi sistem Linux. Terbiasa membangun aplikasi terstruktur berbasis logika algoritma, merancang skema database (ERD/RAT), dan mengelola keamanan hak akses pengguna pada MySQL/MariaDB. Bekerja efisien di lingkungan pengembangan berbasis terminal dengan komitmen estetika mandiri.
+              </p>
+            </div>
+          </div>
+
+          <!-- Right Column: Tactical Segmented Stat Bars & Media Widget -->
+          <div class="about-stats-col">
+            <div class="stats-header">
+              <span class="stats-label">TECHNICAL PROFICIENCY // JRPG MATRIX</span>
+              <span class="stats-code">SYS.STATUS: OPTIMIZED</span>
+            </div>
+
+            <!-- JRPG-Style Segmented Stat Bars -->
+            <div class="tactical-stat-bars">
+              <!-- Stat 1 -->
+              <div class="stat-row">
+                <div class="stat-info">
+                  <span class="stat-name">C/C++ &amp; LOGIKA ALGORITMA</span>
+                  <span class="stat-value" data-val="92">92% [LV. 09]</span>
+                </div>
+                <div class="segmented-bar" aria-label="Keahlian C/C++ 92%">
+                  <span class="segment filled"></span>
+                  <span class="segment filled"></span>
+                  <span class="segment filled"></span>
+                  <span class="segment filled"></span>
+                  <span class="segment filled"></span>
+                  <span class="segment filled"></span>
+                  <span class="segment filled"></span>
+                  <span class="segment filled"></span>
+                  <span class="segment filled"></span>
+                  <span class="segment empty"></span>
+                </div>
+              </div>
+
+              <!-- Stat 2 -->
+              <div class="stat-row">
+                <div class="stat-info">
+                  <span class="stat-name">DATABASE SQL &amp; ERD RELASIONAL</span>
+                  <span class="stat-value" data-val="88">88% [LV. 08]</span>
+                </div>
+                <div class="segmented-bar" aria-label="Keahlian Database SQL 88%">
+                  <span class="segment filled"></span>
+                  <span class="segment filled"></span>
+                  <span class="segment filled"></span>
+                  <span class="segment filled"></span>
+                  <span class="segment filled"></span>
+                  <span class="segment filled"></span>
+                  <span class="segment filled"></span>
+                  <span class="segment filled"></span>
+                  <span class="segment empty"></span>
+                  <span class="segment empty"></span>
+                </div>
+              </div>
+
+              <!-- Stat 3 -->
+              <div class="stat-row">
+                <div class="stat-info">
+                  <span class="stat-name">LINUX RICING &amp; WAYLAND DE</span>
+                  <span class="stat-value" data-val="95">95% [LV. 10]</span>
+                </div>
+                <div class="segmented-bar" aria-label="Keahlian Linux Ricing 95%">
+                  <span class="segment filled"></span>
+                  <span class="segment filled"></span>
+                  <span class="segment filled"></span>
+                  <span class="segment filled"></span>
+                  <span class="segment filled"></span>
+                  <span class="segment filled"></span>
+                  <span class="segment filled"></span>
+                  <span class="segment filled"></span>
+                  <span class="segment filled"></span>
+                  <span class="segment filled"></span>
+                </div>
+              </div>
+
+              <!-- Stat 4 -->
+              <div class="stat-row">
+                <div class="stat-info">
+                  <span class="stat-name">ENDURANCE CYCLING &amp; TOPOGRAFI</span>
+                  <span class="stat-value" data-val="84">84% [LV. 08]</span>
+                </div>
+                <div class="segmented-bar" aria-label="Keahlian Endurance Cycling 84%">
+                  <span class="segment filled"></span>
+                  <span class="segment filled"></span>
+                  <span class="segment filled"></span>
+                  <span class="segment filled"></span>
+                  <span class="segment filled"></span>
+                  <span class="segment filled"></span>
+                  <span class="segment filled"></span>
+                  <span class="segment filled"></span>
+                  <span class="segment empty"></span>
+                  <span class="segment empty"></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tactile Media-Widget Module -->
+            <div class="tactile-media-widget">
+              <div class="widget-top-bar">
+                <div class="timeline-badge">
+                  <span class="timeline-dot"></span>
+                  <span>PERJALANAN AKTIF: 2024 (SEKARANG)</span>
+                </div>
+                <!-- Interactive Ambient Soundwave Toggle -->
+                <button class="ambient-pill-toggle" id="about-ambient-toggle" aria-label="Toggle fokus audio ambien" aria-pressed="false">
+                  <span class="soundwave-icon" aria-hidden="true">
+                    <i></i><i></i><i></i><i></i>
+                  </span>
+                  <span>FOKUS AMBIEN</span>
+                </button>
+              </div>
+
+              <div class="discipline-pills-label">PILIH DISIPLIN EKSPLORASI:</div>
+              <div class="discipline-pills-cluster">
+                <button class="disc-pill active" data-disc="cpp" aria-label="Pilih disiplin Rekayasa C++">C/C++ &amp; Logic</button>
+                <button class="disc-pill" data-disc="sql" aria-label="Pilih disiplin Basis Data SQL">Database Relasional</button>
+                <button class="disc-pill" data-disc="linux" aria-label="Pilih disiplin Linux Ricing">Linux Ricing</button>
+                <button class="disc-pill" data-disc="cycling" aria-label="Pilih disiplin Cycling">Endurance Cycling</button>
+                <button class="disc-pill" data-disc="photo" aria-label="Pilih disiplin Fotografi Analog">Fotografi Analog</button>
+              </div>
+
+              <!-- Dynamic Marginalia Context Box -->
+              <div class="dynamic-marginalia-box" id="marginalia-box">
+                <div class="marginalia-indicator">CATATAN MARGINALIA // DISIPLIN TERPILIH</div>
+                <p class="marginalia-text" id="marginalia-text">
+                  "Menulis kode terstruktur dengan manajemen memori presisi, algoritma sorting/searching optimal, dan struktur data hierarkis bebas kebocoran memori."
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         3. CURATED PHOTO PORTFOLIO (3D Curved Panoramic Strip & Staggered Brick Wall)
+         ══════════════════════════════════════════════════════════════ -->
+    <section id="section-photos" class="section" aria-label="Galeri Foto Analog">
+      <div class="photos-header-bar">
+        <div class="section-header-editorial">
+          <span class="section-num">03 // VISUAL ARCHIVE</span>
+          <h2 class="section-title-editorial">Kontak Cetak &amp; <em>Arsip 35mm</em></h2>
+        </div>
+
+        <!-- Tactile View Switcher Toggle -->
+        <div class="photo-view-switcher" role="tablist" aria-label="Pilihan tampilan galeri">
+          <button class="view-btn active" data-view="panorama" role="tab" aria-selected="true" aria-controls="view-panorama">
+            <span>&#x25EB; PANORAMA 3D</span>
+          </button>
+          <button class="view-btn" data-view="brick" role="tab" aria-selected="false" aria-controls="view-brick">
+            <span>&#x25A4; BRICK WALL</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- VIEW 1: 3D Curved Perspective Panorama -->
+      <div class="photo-view-container view-panorama active" id="view-panorama" role="tabpanel">
+        <div class="panorama-controls-bar">
+          <span class="panorama-hint">GESER ATAU GUNAKAN PANAH UNTUK MENELUSURI PITA FILM 3D</span>
+          <div class="panorama-arrows">
+            <button class="pano-arrow pano-prev" id="pano-prev-btn" aria-label="Geser pita ke kiri">&#8592; SEBELUMNYA</button>
+            <button class="pano-arrow pano-next" id="pano-next-btn" aria-label="Geser pita ke kanan">BERIKUTNYA &#8594;</button>
+          </div>
+        </div>
+
+        <div class="panorama-3d-stage">
+          <div class="panorama-strip" id="panorama-strip">
+            <!-- Panorama Item 1 -->
+            <div class="pano-card" data-index="0" data-frame="01A" data-exif="35mm f/2.8 1/125s ISO400" tabindex="0" role="button" aria-label="Foto 01A, Jalanan Kota">
+              <span class="film-edge-num">01A</span>
+              <div class="pano-img-wrap">
+                <img src="assets/photos/photo-01.jpg" alt="Dokumentasi analog suasana jalanan kota" width="480" height="360" loading="lazy">
+              </div>
+              <div class="pano-meta">
+                <span class="pano-caption">KERUMUNAN KOTA</span>
+                <span class="pano-exif">35mm f/2.8 1/125s</span>
+              </div>
+            </div>
+
+            <!-- Panorama Item 2 -->
+            <div class="pano-card" data-index="1" data-frame="02A" data-exif="50mm f/1.8 1/250s ISO200" tabindex="0" role="button" aria-label="Foto 02A, Bayangan Urban">
+              <span class="film-edge-num">02A</span>
+              <div class="pano-img-wrap">
+                <img src="assets/photos/photo-02.jpg" alt="Bayangan kontras arsitektur urban" width="480" height="360" loading="lazy">
+              </div>
+              <div class="pano-meta">
+                <span class="pano-caption">BAYANGAN URBAN</span>
+                <span class="pano-exif">50mm f/1.8 1/250s</span>
+              </div>
+            </div>
+
+            <!-- Panorama Item 3 -->
+            <div class="pano-card" data-index="2" data-frame="03A" data-exif="28mm f/4.0 1/60s ISO800" tabindex="0" role="button" aria-label="Foto 03A, Garis Ruang">
+              <span class="film-edge-num">03A</span>
+              <div class="pano-img-wrap">
+                <img src="assets/photos/photo-03.jpg" alt="Perspektif garis dan tekstur ruang publik" width="480" height="360" loading="lazy">
+              </div>
+              <div class="pano-meta">
+                <span class="pano-caption">GEOMETRI RUANG</span>
+                <span class="pano-exif">28mm f/4.0 1/60s</span>
+              </div>
+            </div>
+
+            <!-- Panorama Item 4 -->
+            <div class="pano-card" data-index="3" data-frame="04A" data-exif="35mm f/2.0 1/500s ISO100" tabindex="0" role="button" aria-label="Foto 04A, Siluet Senja">
+              <span class="film-edge-num">04A</span>
+              <div class="pano-img-wrap">
+                <img src="assets/photos/photo-04.jpg" alt="Siluet pejalan kaki di bawah cahaya senja" width="480" height="360" loading="lazy">
+              </div>
+              <div class="pano-meta">
+                <span class="pano-caption">SILUET SENJA</span>
+                <span class="pano-exif">35mm f/2.0 1/500s</span>
+              </div>
+            </div>
+
+            <!-- Panorama Item 5 -->
+            <div class="pano-card" data-index="4" data-frame="05A" data-exif="26mm f/1.8 1/120s ISO64" tabindex="0" role="button" aria-label="Foto 05A, Kubah Arsitektur">
+              <span class="film-edge-num">05A</span>
+              <div class="pano-img-wrap">
+                <img src="assets/photos/photo-05.jpg" alt="Kubah masjid dan simetri arsitektur sakral" width="480" height="360" loading="lazy">
+              </div>
+              <div class="pano-meta">
+                <span class="pano-caption">ARSITEKTUR SAKRAL</span>
+                <span class="pano-exif">26mm f/1.8 1/120s</span>
+              </div>
+            </div>
+
+            <!-- Panorama Item 6 -->
+            <div class="pano-card" data-index="5" data-frame="06A" data-exif="85mm f/1.4 1/320s ISO200" tabindex="0" role="button" aria-label="Foto 06A, Karakter Potret">
+              <span class="film-edge-num">06A</span>
+              <div class="pano-img-wrap">
+                <img src="assets/photos/photo-06.jpg" alt="Potret monokrom karakter wajah" width="480" height="360" loading="lazy">
+              </div>
+              <div class="pano-meta">
+                <span class="pano-caption">MONOKROM POTRET</span>
+                <span class="pano-exif">85mm f/1.4 1/320s</span>
+              </div>
+            </div>
+
+            <!-- Panorama Item 7 -->
+            <div class="pano-card" data-index="6" data-frame="07A" data-exif="52mm f/2.0 1/100s ISO50" tabindex="0" role="button" aria-label="Foto 07A, Cahaya Alami">
+              <span class="film-edge-num">07A</span>
+              <div class="pano-img-wrap">
+                <img src="assets/photos/photo-07.jpg" alt="Detail tekstur dan pendaran cahaya alami" width="480" height="360" loading="lazy">
+              </div>
+              <div class="pano-meta">
+                <span class="pano-caption">CAHAYA ALAMI</span>
+                <span class="pano-exif">52mm f/2.0 1/100s</span>
+              </div>
+            </div>
+
+            <!-- Panorama Item 8 -->
+            <div class="pano-card" data-index="7" data-frame="08A" data-exif="35mm f/2.8 1/200s ISO400" tabindex="0" role="button" aria-label="Foto 08A, Lorong Urban">
+              <span class="film-edge-num">08A</span>
+              <div class="pano-img-wrap">
+                <img src="assets/photos/photo-08.jpg" alt="Geometri dinding dan bayang-bayang jalanan" width="480" height="360" loading="lazy">
+              </div>
+              <div class="pano-meta">
+                <span class="pano-caption">LORONG DINDING</span>
+                <span class="pano-exif">35mm f/2.8 1/200s</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VIEW 2: Edge-Bleeding Staggered Brick Wall -->
+      <div class="photo-view-container view-brick" id="view-brick" role="tabpanel">
+        <!-- Dynamic Diagonal Slash-Cut Featured Header Card -->
+        <div class="brick-slash-header">
+          <div class="slash-header-content">
+            <span class="slash-tag">SOROTAN KURATORIAL // BUKTI KONTAK CETAK</span>
+            <h3 class="slash-title">Eksplorasi Sudut Kota &amp; <em>Gradasi Monokrom</em></h3>
+            <p class="slash-desc">
+              Menyusun rekaman visual analog dalam ritme bata horizontal yang melintasi tepi layar. Setiap foto menyimpan partikel perak halida dan waktu yang terhenti.
+            </p>
+          </div>
+          <div class="slash-image-cut">
+            <img src="assets/photos/photo-05.jpg" alt="Foto sorotan utama" width="700" height="420" loading="lazy">
+          </div>
+        </div>
+
+        <!-- 3 Horizontal Offset Bleeding Rows with Scroll Drift -->
+        <div class="brick-wall-viewport">
+          <!-- Row 1 -->
+          <div class="brick-row brick-row-1">
+            <div class="brick-tile" data-index="0" data-frame="01A" data-exif="35mm f/2.8 1/125s ISO400" tabindex="0" role="button" aria-label="Foto 01A">
+              <img src="assets/photos/photo-01.jpg" alt="Foto jalanan 01" width="360" height="360" loading="lazy">
+              <span class="brick-badge">01A</span>
+            </div>
+            <div class="brick-tile" data-index="1" data-frame="02A" data-exif="50mm f/1.8 1/250s ISO200" tabindex="0" role="button" aria-label="Foto 02A">
+              <img src="assets/photos/photo-02.jpg" alt="Foto jalanan 02" width="360" height="360" loading="lazy">
+              <span class="brick-badge">02A</span>
+            </div>
+            <div class="brick-tile" data-index="2" data-frame="03A" data-exif="28mm f/4.0 1/60s ISO800" tabindex="0" role="button" aria-label="Foto 03A">
+              <img src="assets/photos/photo-03.jpg" alt="Foto jalanan 03" width="360" height="360" loading="lazy">
+              <span class="brick-badge">03A</span>
+            </div>
+            <div class="brick-tile" data-index="3" data-frame="04A" data-exif="35mm f/2.0 1/500s ISO100" tabindex="0" role="button" aria-label="Foto 04A">
+              <img src="assets/photos/photo-04.jpg" alt="Foto jalanan 04" width="360" height="360" loading="lazy">
+              <span class="brick-badge">04A</span>
+            </div>
+            <div class="brick-tile" data-index="8" data-frame="09A" data-exif="50mm f/2.0 1/320s ISO200" tabindex="0" role="button" aria-label="Foto 09A">
+              <img src="assets/photos/photo-09.jpg" alt="Foto jalanan 09" width="360" height="360" loading="lazy">
+              <span class="brick-badge">09A</span>
+            </div>
+          </div>
+
+          <!-- Row 2 (Offset -80px) -->
+          <div class="brick-row brick-row-2">
+            <div class="brick-tile" data-index="4" data-frame="05A" data-exif="26mm f/1.8 1/120s ISO64" tabindex="0" role="button" aria-label="Foto 05A">
+              <img src="assets/photos/photo-05.jpg" alt="Foto jalanan 05" width="360" height="360" loading="lazy">
+              <span class="brick-badge">05A</span>
+            </div>
+            <div class="brick-tile" data-index="5" data-frame="06A" data-exif="85mm f/1.4 1/320s ISO200" tabindex="0" role="button" aria-label="Foto 06A">
+              <img src="assets/photos/photo-06.jpg" alt="Foto jalanan 06" width="360" height="360" loading="lazy">
+              <span class="brick-badge">06A</span>
+            </div>
+            <div class="brick-tile" data-index="6" data-frame="07A" data-exif="52mm f/2.0 1/100s ISO50" tabindex="0" role="button" aria-label="Foto 07A">
+              <img src="assets/photos/photo-07.jpg" alt="Foto jalanan 07" width="360" height="360" loading="lazy">
+              <span class="brick-badge">07A</span>
+            </div>
+            <div class="brick-tile" data-index="7" data-frame="08A" data-exif="35mm f/2.8 1/200s ISO400" tabindex="0" role="button" aria-label="Foto 08A">
+              <img src="assets/photos/photo-08.jpg" alt="Foto jalanan 08" width="360" height="360" loading="lazy">
+              <span class="brick-badge">08A</span>
+            </div>
+            <div class="brick-tile" data-index="9" data-frame="10A" data-exif="35mm f/2.0 1/500s ISO100" tabindex="0" role="button" aria-label="Foto 10A">
+              <img src="assets/photos/photo-10.jpg" alt="Foto jalanan 10" width="360" height="360" loading="lazy">
+              <span class="brick-badge">10A</span>
+            </div>
+          </div>
+
+          <!-- Row 3 (Offset -160px) -->
+          <div class="brick-row brick-row-3">
+            <div class="brick-tile" data-index="10" data-frame="11A" data-exif="28mm f/2.8 1/160s ISO400" tabindex="0" role="button" aria-label="Foto 11A">
+              <img src="assets/photos/photo-11.jpg" alt="Foto jalanan 11" width="360" height="360" loading="lazy">
+              <span class="brick-badge">11A</span>
+            </div>
+            <div class="brick-tile" data-index="11" data-frame="12A" data-exif="85mm f/1.8 1/400s ISO100" tabindex="0" role="button" aria-label="Foto 12A">
+              <img src="assets/photos/photo-12.jpg" alt="Foto jalanan 12" width="360" height="360" loading="lazy">
+              <span class="brick-badge">12A</span>
+            </div>
+            <div class="brick-tile" data-index="0" data-frame="01A" data-exif="35mm f/2.8 1/125s ISO400" tabindex="0" role="button" aria-label="Foto 01A">
+              <img src="assets/photos/photo-01.jpg" alt="Foto jalanan 01" width="360" height="360" loading="lazy">
+              <span class="brick-badge">01A</span>
+            </div>
+            <div class="brick-tile" data-index="1" data-frame="02A" data-exif="50mm f/1.8 1/250s ISO200" tabindex="0" role="button" aria-label="Foto 02A">
+              <img src="assets/photos/photo-02.jpg" alt="Foto jalanan 02" width="360" height="360" loading="lazy">
+              <span class="brick-badge">02A</span>
+            </div>
+            <div class="brick-tile" data-index="2" data-frame="03A" data-exif="28mm f/4.0 1/60s ISO800" tabindex="0" role="button" aria-label="Foto 03A">
+              <img src="assets/photos/photo-03.jpg" alt="Foto jalanan 03" width="360" height="360" loading="lazy">
+              <span class="brick-badge">03A</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Universal Editorial Lightbox Modal with Loupe Magnifier -->
+      <div class="lightbox" role="dialog" aria-modal="true" aria-label="Penampil foto resolusi tinggi" hidden>
+        <button class="lightbox-close" aria-label="Tutup penampil foto">&times;</button>
+        <div class="lightbox-content">
+          <img class="lightbox-image" src="" alt="" width="1200" height="800">
+          <div class="lightbox-loupe" aria-hidden="true"></div>
+        </div>
+        <button class="lightbox-prev" aria-label="Foto sebelumnya">&#8592;</button>
+        <button class="lightbox-next" aria-label="Foto berikutnya">&#8594;</button>
+        <div class="lightbox-meta">
+          <span class="lightbox-frame-num"></span>
+          <span class="lightbox-exif"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         4. HYPRLAND SETUP SHOWCASE (Slanted HUD Selector & Interactive Workspace)
+         ══════════════════════════════════════════════════════════════ -->
+    <section id="section-setup" class="section" aria-label="Setup Meja Kerja Digital">
+      <div class="section-header-editorial">
+        <span class="section-num">04 // LINUX RICING CULTURE</span>
+        <h2 class="section-title-editorial">Arsitektur Workspace &amp; <em>Dotfiles Wayland</em></h2>
+      </div>
+
+      <div class="setup-slanted-layout">
+        <!-- Left Column: Slanted HUD Selector Rail -->
+        <div class="slanted-rail-col">
+          <div class="rail-title-tag">MODULE SELECTOR // SKEWED MATRIX</div>
+          <div class="slanted-rail-stack">
+            <button class="slanted-card active" data-module="hyprland" aria-label="Pilih konfigurasi Hyprland">
+              <div class="slanted-card-edge"></div>
+              <div class="slanted-card-body">
+                <span class="slanted-num">01 // COMPOSITOR</span>
+                <span class="slanted-name">HYPRLAND.CONF</span>
+                <span class="slanted-desc">Dwindle layout, gaps 6/8, custom bezier</span>
+              </div>
+            </button>
+
+            <button class="slanted-card" data-module="waybar" aria-label="Pilih konfigurasi Waybar">
+              <div class="slanted-card-edge"></div>
+              <div class="slanted-card-body">
+                <span class="slanted-num">02 // STATUS BAR</span>
+                <span class="slanted-name">WAYBAR CONFIG</span>
+                <span class="slanted-desc">Top minimal bar, workspaces, pulseaudio</span>
+              </div>
+            </button>
+
+            <button class="slanted-card" data-module="kitty" aria-label="Pilih konfigurasi Kitty Terminal">
+              <div class="slanted-card-edge"></div>
+              <div class="slanted-card-body">
+                <span class="slanted-num">03 // TERMINAL &amp; SHELL</span>
+                <span class="slanted-name">KITTY + FISH</span>
+                <span class="slanted-desc">GPU acceleration, JetBrains ligatures</span>
+              </div>
+            </button>
+
+            <button class="slanted-card" data-module="fastfetch" aria-label="Pilih konfigurasi Fastfetch">
+              <div class="slanted-card-edge"></div>
+              <div class="slanted-card-body">
+                <span class="slanted-num">04 // SYSTEM METRICS</span>
+                <span class="slanted-name">FASTFETCH &amp; ARCH</span>
+                <span class="slanted-desc">Hardware specs, kernel 6.12, uptime telemetry</span>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Center Tiling Viewport: Simulated Hyprland Workspace -->
+        <div class="hyprland-viewport-col">
+          <div class="simulated-hyprland-screen">
+            <!-- Simulated Top Waybar -->
+            <div class="sim-waybar">
+              <div class="wb-left">
+                <span class="wb-ws active">1:main</span>
+                <span class="wb-ws">2:dev</span>
+                <span class="wb-ws">3:term</span>
+                <span class="wb-ws">4:art</span>
+              </div>
+              <div class="wb-center">
+                <span class="wb-clock" id="sim-clock">JUMAT, 20 NOV · 19:16</span>
+              </div>
+              <div class="wb-right">
+                <span class="wb-item">VOL 72%</span>
+                <span class="wb-item">RAM 4.2GB</span>
+                <span class="wb-item">BAT 94%</span>
+              </div>
+            </div>
+
+            <!-- Dynamic Window Tiling Container -->
+            <div class="hypr-tiled-workspace" id="hypr-workspace-container">
+              <!-- Window 1 (Main Editor/Config) -->
+              <div class="hypr-window win-primary" id="hypr-win-primary">
+                <div class="win-titlebar">
+                  <div class="win-dots">
+                    <span class="dot close"></span>
+                    <span class="dot min"></span>
+                    <span class="dot max"></span>
+                  </div>
+                  <span class="win-title" id="win-primary-title">~/.config/hypr/hyprland.conf (NVIM)</span>
+                  <span class="win-badge">UTF-8</span>
+                </div>
+                <div class="win-content">
+                  <pre class="syntax-code"><code id="code-primary"># Hyprland Compositor Config
+autostart = waybar &amp; mako &amp; hyprpaper
+
+general {
+    gaps_in = 6
+    gaps_out = 8
+    border_size = 2
+    col.active_border = rgb(5E1224)
+    col.inactive_border = rgb(EAE2D3)
+    layout = dwindle
+}
+
+decoration {
+    rounding = 8
+    blur {
+        enabled = true
+        size = 4
+        passes = 2
+    }
+}</code></pre>
+                </div>
+              </div>
+
+              <!-- Window 2 (Terminal/Side Inspector) -->
+              <div class="hypr-window win-secondary" id="hypr-win-secondary">
+                <div class="win-titlebar">
+                  <div class="win-dots">
+                    <span class="dot close"></span>
+                    <span class="dot min"></span>
+                    <span class="dot max"></span>
+                  </div>
+                  <span class="win-title" id="win-secondary-title">fish ~ artetha@arch: hyprctl</span>
+                  <span class="win-badge">EXEC</span>
+                </div>
+                <div class="win-content">
+                  <pre class="syntax-code"><code id="code-secondary">artetha in ~ on main [λ] hyprctl monitors
+Monitor eDP-1 (ID 0): 1920x1200@60Hz at 0x0 (active)
+active workspace: 1 (main)
+
+artetha in ~ on main [λ] hyprctl version
+Hyprland, built from branch main at commit 4f7b2a9
+Wayland-native compositor running smoothly.</code></pre>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating Tactical HUD Matrix Overlay (Bottom-Right) -->
+            <div class="floating-hud-matrix">
+              <div class="hud-header">
+                <span class="hud-pulse-light"></span>
+                <span>SYSTEM HUD MATRIX // TELEMETRY</span>
+              </div>
+
+              <!-- Gauge Rows -->
+              <div class="hud-gauges">
+                <div class="hud-gauge-item">
+                  <span class="gauge-label">CPU LOAD</span>
+                  <div class="gauge-track"><span class="gauge-fill" style="width: 14%;"></span></div>
+                  <span class="gauge-value">14% (i7-1185G7)</span>
+                </div>
+                <div class="hud-gauge-item">
+                  <span class="gauge-label">MEMORY</span>
+                  <div class="gauge-track"><span class="gauge-fill" style="width: 27%;"></span></div>
+                  <span class="gauge-value">4.2 / 16.0 GB</span>
+                </div>
+                <div class="hud-gauge-item">
+                  <span class="gauge-label">UPTIME</span>
+                  <span class="gauge-raw">14 HARI, 6 JAM</span>
+                </div>
+              </div>
+
+              <!-- Active Color Swatches -->
+              <div class="hud-palette-swatches">
+                <span class="palette-title">PALET RICE:</span>
+                <div class="swatch-cluster">
+                  <button class="swatch-btn" data-color="#F4EFE6" style="background:#F4EFE6;" title="Salin #F4EFE6" aria-label="Salin warna #F4EFE6"></button>
+                  <button class="swatch-btn" data-color="#EAE2D3" style="background:#EAE2D3;" title="Salin #EAE2D3" aria-label="Salin warna #EAE2D3"></button>
+                  <button class="swatch-btn" data-color="#5E1224" style="background:#5E1224;" title="Salin #5E1224" aria-label="Salin warna #5E1224"></button>
+                  <button class="swatch-btn" data-color="#8A1C36" style="background:#8A1C36;" title="Salin #8A1C36" aria-label="Salin warna #8A1C36"></button>
+                  <button class="swatch-btn" data-color="#1A1415" style="background:#1A1415;" title="Salin #1A1415" aria-label="Salin warna #1A1415"></button>
+                  <button class="swatch-btn" data-color="#FAF6EE" style="background:#FAF6EE;" title="Salin #FAF6EE" aria-label="Salin warna #FAF6EE"></button>
+                </div>
+              </div>
+
+              <!-- Action Bar -->
+              <div class="hud-action-row">
+                <button class="copy-dotfiles-btn" id="copy-dotfiles-btn" aria-label="Salin potongan konfigurasi dotfiles">
+                  <span>SALIN DOTFILES</span>
+                  <span class="btn-arrow">&#x2197;</span>
+                </button>
+                <div class="copy-toast" id="dotfiles-toast" aria-live="polite">Tersalin ke clipboard!</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         5. CYCLING TRIPS & TELEMETRY (Radial Arch Orbit Gallery & Central Telemetry)
+         ══════════════════════════════════════════════════════════════ -->
+    <section id="section-cycling" class="section" aria-label="Catatan Rute Sepeda dan Telemetri">
+      <div class="section-header-editorial">
+        <span class="section-num">05 // STRAVA TELEMETRY &amp; EXPEDITION</span>
+        <h2 class="section-title-editorial">Orbit Topografi &amp; <em>Elevasi Lereng Merapi</em></h2>
+      </div>
+
+      <div class="cycling-radial-container">
+        <!-- 180° Semi-Circular Radial Arch of Ride Photography Tiles -->
+        <div class="radial-arch-orbit" id="radial-arch-orbit">
+          <!-- 10 Ride Photo Tiles positioned along the 180° semi-circular arch -->
+          <div class="orbit-tile active" data-km="04.2" data-elev="+120M" data-loc="Start Jalur Kaliurang" data-img="assets/photos/photo-01.jpg" tabindex="0" role="button" aria-label="Titik KM 04.2">
+            <img src="assets/photos/photo-01.jpg" alt="Titik awal KM 04" width="160" height="160" loading="lazy">
+            <span class="tile-tag">KM 04</span>
+          </div>
+
+          <div class="orbit-tile" data-km="08.6" data-elev="+185M" data-loc="Persimpangan Desa Pakem" data-img="assets/photos/photo-02.jpg" tabindex="0" role="button" aria-label="Titik KM 08.6">
+            <img src="assets/photos/photo-02.jpg" alt="Titik KM 08" width="160" height="160" loading="lazy">
+            <span class="tile-tag">KM 08</span>
+          </div>
+
+          <div class="orbit-tile" data-km="14.2" data-elev="+260M" data-loc="Tanjakan Hutan Pinus" data-img="assets/photos/photo-03.jpg" tabindex="0" role="button" aria-label="Titik KM 14.2">
+            <img src="assets/photos/photo-03.jpg" alt="Titik KM 14" width="160" height="160" loading="lazy">
+            <span class="tile-tag">KM 14</span>
+          </div>
+
+          <div class="orbit-tile" data-km="19.8" data-elev="+325M" data-loc="Jalur Aspal Berbatu" data-img="assets/photos/photo-04.jpg" tabindex="0" role="button" aria-label="Titik KM 19.8">
+            <img src="assets/photos/photo-04.jpg" alt="Titik KM 19" width="160" height="160" loading="lazy">
+            <span class="tile-tag">KM 19</span>
+          </div>
+
+          <div class="orbit-tile" data-km="24.5" data-elev="+390M" data-loc="Jembatan Kali Kuning" data-img="assets/photos/photo-05.jpg" tabindex="0" role="button" aria-label="Titik KM 24.5">
+            <img src="assets/photos/photo-05.jpg" alt="Titik KM 24" width="160" height="160" loading="lazy">
+            <span class="tile-tag">KM 24</span>
+          </div>
+
+          <div class="orbit-tile" data-km="28.1" data-elev="+440M" data-loc="Tikungan Lereng Selatan" data-img="assets/photos/photo-06.jpg" tabindex="0" role="button" aria-label="Titik KM 28.1">
+            <img src="assets/photos/photo-06.jpg" alt="Titik KM 28" width="160" height="160" loading="lazy">
+            <span class="tile-tag">KM 28</span>
+          </div>
+
+          <div class="orbit-tile" data-km="32.0" data-elev="+486M" data-loc="Puncak Elevasi Kaliurang" data-img="assets/photos/photo-07.jpg" tabindex="0" role="button" aria-label="Titik KM 32.0">
+            <img src="assets/photos/photo-07.jpg" alt="Titik KM 32" width="160" height="160" loading="lazy">
+            <span class="tile-tag">KM 32</span>
+          </div>
+
+          <div class="orbit-tile" data-km="36.4" data-elev="+310M" data-loc="Turunan Jalur Barat" data-img="assets/photos/photo-08.jpg" tabindex="0" role="button" aria-label="Titik KM 36.4">
+            <img src="assets/photos/photo-08.jpg" alt="Titik KM 36" width="160" height="160" loading="lazy">
+            <span class="tile-tag">KM 36</span>
+          </div>
+
+          <div class="orbit-tile" data-km="39.2" data-elev="+210M" data-loc="Tepi Sungai Boyong" data-img="assets/photos/photo-09.jpg" tabindex="0" role="button" aria-label="Titik KM 39.2">
+            <img src="assets/photos/photo-09.jpg" alt="Titik KM 39" width="160" height="160" loading="lazy">
+            <span class="tile-tag">KM 39</span>
+          </div>
+
+          <div class="orbit-tile" data-km="42.3" data-elev="+140M" data-loc="Garis Akhir Perjalanan" data-img="assets/photos/photo-10.jpg" tabindex="0" role="button" aria-label="Titik KM 42.3">
+            <img src="assets/photos/photo-10.jpg" alt="Titik KM 42" width="160" height="160" loading="lazy">
+            <span class="tile-tag">KM 42</span>
+          </div>
+        </div>
+
+        <!-- Central Strava Anchor (Inside the Hollow Center) -->
+        <div class="central-strava-anchor">
+          <!-- Live Geotagged Waypoint Notification -->
+          <div class="orbit-sync-banner" id="orbit-sync-banner">
+            <span class="sync-dot"></span>
+            <span class="sync-text" id="sync-checkpoint-text">CHECKPOINT // KM 04.2 (ELEV: +120M) : START JALUR KALIURANG</span>
+          </div>
+
+          <!-- Animated SVG GPX Route Path -->
+          <div class="strava-svg-wrap">
+            <svg class="orbit-route-svg" viewBox="0 0 700 240" aria-label="Visualisasi jalur GPX lereng Merapi">
+              <path class="orbit-route-bg" d="M30,200 C120,200 180,80 260,110 S380,220 460,120 S560,40 670,90" fill="none" stroke="rgba(94,18,36,0.18)" stroke-width="4"/>
+              <path class="orbit-route-active" id="orbit-route-active" d="M30,200 C120,200 180,80 260,110 S380,220 460,120 S560,40 670,90" fill="none" stroke="#5E1224" stroke-width="4" stroke-dasharray="1400" stroke-dashoffset="1400"/>
+
+              <!-- Synchronized Waypoint Beacons -->
+              <circle class="waypoint-beacon" id="beacon-0" cx="60" cy="195" r="5" fill="#5E1224"/>
+              <circle class="waypoint-beacon" id="beacon-1" cx="130" cy="170" r="5" fill="#5E1224"/>
+              <circle class="waypoint-beacon" id="beacon-2" cx="200" cy="95" r="5" fill="#5E1224"/>
+              <circle class="waypoint-beacon" id="beacon-3" cx="260" cy="110" r="5" fill="#5E1224"/>
+              <circle class="waypoint-beacon" id="beacon-4" cx="330" cy="165" r="5" fill="#5E1224"/>
+              <circle class="waypoint-beacon" id="beacon-5" cx="395" cy="195" r="5" fill="#5E1224"/>
+              <circle class="waypoint-beacon" id="beacon-6" cx="460" cy="120" r="7" fill="#8A1C36"/>
+              <circle class="waypoint-beacon" id="beacon-7" cx="525" cy="70" r="5" fill="#5E1224"/>
+              <circle class="waypoint-beacon" id="beacon-8" cx="590" cy="55" r="5" fill="#5E1224"/>
+              <circle class="waypoint-beacon" id="beacon-9" cx="660" cy="85" r="5" fill="#5E1224"/>
+            </svg>
+          </div>
+
+          <!-- Crisp Monospace Telemetry Metrics -->
+          <div class="orbit-metrics-grid">
+            <div class="orbit-metric-box">
+              <span class="m-label">JARAK TEMPUH</span>
+              <span class="m-val" id="metric-dist">42.3 KM</span>
+            </div>
+            <div class="orbit-metric-box">
+              <span class="m-label">ELEVASI GAIN</span>
+              <span class="m-val" id="metric-elev">+486 M</span>
+            </div>
+            <div class="orbit-metric-box">
+              <span class="m-label">WAKTU BERGERAK</span>
+              <span class="m-val">1J 48M</span>
+            </div>
+            <div class="orbit-metric-box">
+              <span class="m-label">RERATA LAJU</span>
+              <span class="m-val">23.5 KM/J</span>
+            </div>
+          </div>
+
+          <p class="orbit-narrative">
+            Ekspedisi jalan menanjak aspal pedesaan lereng selatan Merapi. Melewati udara sejuk pagi hari, kabut tipis di tikungan pinus, dan turunan teknis berliku menuju lembah sungai.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         6. POETRY ANTHOLOGY (Mixed-Serif Literary Spread & Tactile Control Deck)
+         ══════════════════════════════════════════════════════════════ -->
+    <section id="section-poem" class="section" aria-label="Antologi Puisi">
+      <div class="section-header-editorial">
+        <span class="section-num">06 // LITERARY CANVAS</span>
+        <h2 class="section-title-editorial">Antologi Kata &amp; <em>Suara Hujan</em></h2>
+      </div>
+
+      <div class="poem-literary-spread">
+        <!-- Floating Margin Notes / Marginalia -->
+        <div class="poem-margin-note left-note" aria-hidden="true">
+          <span class="note-index">[CATATAN 01]</span>
+          <span class="note-body">Ditulis di kamar lantai dua saat gerimis malam membasahi genting.</span>
+        </div>
+
+        <div class="poem-margin-note right-note" aria-hidden="true">
+          <span class="note-index">[CATATAN 02]</span>
+          <span class="note-body">Irama Newsreader serif dengan jeda baris yang memberi ruang napas.</span>
+        </div>
+
+        <!-- Central Literary Parchment Canvas -->
+        <div class="poem-canvas-card">
+          <!-- Poem 0 -->
+          <div class="poem-display-unit active" data-poem-index="0">
+            <div class="poem-title-container">
+              <span class="poem-kicker">KUMPULAN SAJAK // LEMBAR PERTAMA</span>
+              <h3 class="mixed-serif-title">Hujan di <em>Jendela</em> Kost</h3>
+            </div>
+            <div class="stanzas-flow">
+              <div class="stanza">
+                <p>
+                  Di balik kaca yang berembun,<br>
+                  aku menghitung tetes yang jatuh.<br>
+                  Satu, dua, tiga, lalu hilang<br>
+                  seperti janji yang tak pernah sampai.
+                </p>
+              </div>
+              <div class="stanza">
+                <p>
+                  Biar hujan bicara malam ini.<br>
+                  Aku hanya pendengar yang lelah<br>
+                  menyimpan cerita di balik bantal.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Poem 1 -->
+          <div class="poem-display-unit hidden" data-poem-index="1">
+            <div class="poem-title-container">
+              <span class="poem-kicker">KUMPULAN SAJAK // LEMBAR KEDUA</span>
+              <h3 class="mixed-serif-title">Kopi Pagi yang <em>Dingin</em></h3>
+            </div>
+            <div class="stanzas-flow">
+              <div class="stanza">
+                <p>
+                  Cangkir itu masih di meja,<br>
+                  separuh penuh, separuh lupa.<br>
+                  Kopi yang kubuat tadi pagi<br>
+                  kini sedingin sore yang datang.
+                </p>
+              </div>
+              <div class="stanza">
+                <p>
+                  Ada ampas yang mengendap<br>
+                  seperti kata yang tak terucap,<br>
+                  di dasar gelas, di dasar hati.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Poem 2 -->
+          <div class="poem-display-unit hidden" data-poem-index="2">
+            <div class="poem-title-container">
+              <span class="poem-kicker">KUMPULAN SAJAK // LEMBAR KETIGA</span>
+              <h3 class="mixed-serif-title">Sepeda dan <em>Senja</em></h3>
+            </div>
+            <div class="stanzas-flow">
+              <div class="stanza">
+                <p>
+                  Roda berputar, angin menyapa,<br>
+                  jalan menurun ke arah barat.<br>
+                  Senja memanjang di aspal basah<br>
+                  membentuk bayangan yang tak kuburu.
+                </p>
+              </div>
+              <div class="stanza">
+                <p>
+                  Pedal terus kukayuh pelan,<br>
+                  bukan karena lelah,<br>
+                  tapi karena indah<br>
+                  tak perlu terburu.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tactile Media-Style Reader Deck -->
+          <div class="tactile-reader-deck">
+            <div class="deck-nav-group">
+              <button class="deck-btn poem-prev-btn" id="poem-prev-btn" aria-label="Puisi sebelumnya">&#8592; SEBELUMNYA</button>
+              <div class="deck-poem-counter">
+                <span id="current-poem-num">01</span> / 03
+              </div>
+              <button class="deck-btn poem-next-btn" id="poem-next-btn" aria-label="Puisi berikutnya">BERIKUTNYA &#8594;</button>
+            </div>
+
+            <div class="deck-actions-group">
+              <button class="deck-action-btn ambience-toggle" id="poem-ambience-btn" aria-label="Nyalakan audio sintetis hujan dan kertas" aria-pressed="false">
+                <span class="ambience-icon" aria-hidden="true">&#9834;</span>
+                <span>HUJAN &amp; KERTAS</span>
+              </button>
+              <button class="deck-action-btn quote-card-btn" id="poem-quote-btn" aria-label="Ekspor kartu kutipan berformat PNG">
+                <span>&#x2913; BUAT KARTU KUTIPAN</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════════════════
+         7. CLOSING & COLOPHON (Asymmetric Split & Giant Watermark Bento)
+         ══════════════════════════════════════════════════════════════ -->
+    <footer id="section-footer" class="section" aria-label="Kolofon dan Penutup">
+      <!-- Upper Editorial Split -->
+      <div class="upper-editorial-split">
+        <!-- Left: Rotating Circular Burgundy Emblem -->
+        <div class="footer-emblem-wrap">
+          <div class="footer-rotating-emblem" aria-label="Emblem Arttha 2026">
+            <svg viewBox="0 0 100 100" width="120" height="120">
+              <path id="footer-emblem-path" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none"/>
+              <text font-family="'JetBrains Mono', monospace" font-size="8.5" fill="#5E1224" letter-spacing="2">
+                <textPath href="#footer-emblem-path" startOffset="0%">
+                  ARTTHA • CREATIVE TECHNOLOGIST • 2026 •
+                </textPath>
+              </text>
+              <circle cx="50" cy="50" r="16" fill="none" stroke="#5E1224" stroke-width="1.5"/>
+              <text x="50" y="55" font-family="'Cinzel', serif" font-size="14" font-weight="bold" fill="#5E1224" text-anchor="middle">A</text>
+            </svg>
+          </div>
+          <span class="emblem-caption">YOGYAKARTA, ID // 2026</span>
+        </div>
+
+        <!-- Right: Bold Mixed Upright/Italic Headline & Pill CTA -->
+        <div class="footer-closing-wrap">
+          <span class="closing-kicker">KOLOFON &amp; PENGHUBUNG</span>
+          <h2 class="closing-headline">
+            Mari terhubung &amp; <em>berbincang karya.</em>
+          </h2>
+          <p class="closing-sub">
+            Terbuka untuk kolaborasi rekayasa perangkat lunak, perancangan antarmuka editorial, diskusi Linux ricing, atau sekadar bertukar rute kayuhan sepeda.
+          </p>
+          <div class="closing-cta-cluster">
+            <button class="closing-cta-pill" data-copy="arttha@email.com" aria-label="Salin email untuk menghubungi">
+              <span>MULAI PERCAKAPAN // EMAIL</span>
+              <span class="pill-arrow">&#x2197;</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lower Asymmetric Bento Panels -->
+      <div class="lower-bento-grid">
+        <!-- Left Panel: 65% Width with Giant Watermark Monogram -->
+        <div class="bento-card bento-card-left">
+          <!-- Giant Subtle Low-Opacity Watermark Monogram -->
+          <div class="bento-watermark" aria-hidden="true">AA</div>
+
+          <div class="bento-colophon-body">
+            <div class="colophon-item">
+              <span class="c-title">TIPOGRAFI</span>
+              <p>Cinzel &amp; Cormorant Garamond untuk display editorial, Newsreader untuk narasi prosa dan sajak, JetBrains Mono untuk telemetri teknis.</p>
+            </div>
+            <div class="colophon-item">
+              <span class="c-title">REKAYASA</span>
+              <p>Bespoke HTML5 semantik, CSS3 arsitektur variabel, GSAP 3.12 dengan ScrollTrigger, dan Lenis smooth scroll inersia murni.</p>
+            </div>
+            <div class="colophon-item">
+              <span class="c-title">FILOSOFI</span>
+              <p>Anti-mainstream dan anti-AI-slop. Menolak tata letak generik dan template instan demi kejujuran material visual dan presisi kode.</p>
+            </div>
+          </div>
+
+          <!-- Clustered Pill Navigation Links (Bottom-Right Anchor) -->
+          <div class="bento-nav-cluster">
+            <span class="nav-cluster-title">NAVIGASI PINTAS //</span>
+            <div class="nav-pills-row">
+              <button class="footer-nav-pill" data-target="section-home">Home</button>
+              <button class="footer-nav-pill" data-target="section-about">About</button>
+              <button class="footer-nav-pill" data-target="section-photos">Photos</button>
+              <button class="footer-nav-pill" data-target="section-setup">Set Up</button>
+              <button class="footer-nav-pill" data-target="section-poem">Poem</button>
+              <button class="footer-nav-pill" data-target="section-cycling">Cycling</button>
+              <button class="footer-nav-pill back-to-top" id="back-to-top-btn">&#x2191; Ke Atas</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Panel: 35% Width with Social Links & Interactive Wax Seal -->
+        <div class="bento-card bento-card-right">
+          <div class="social-links-block">
+            <span class="bento-card-label">JARINGAN SOSIAL // SALIN</span>
+            <div class="social-buttons-stack">
+              <button class="contact-link" data-copy="arttha@email.com" aria-label="Salin email arttha@email.com">
+                <span class="link-label">EMAIL:</span>
+                <span class="link-val">arttha@email.com</span>
+                <span class="copy-badge">SALIN</span>
+              </button>
+              <button class="contact-link" data-copy="@arttha" aria-label="Salin handle @arttha">
+                <span class="link-label">GITHUB / SOSIAL:</span>
+                <span class="link-val">@arttha</span>
+                <span class="copy-badge">SALIN</span>
+              </button>
+            </div>
+            <div class="contact-toast" id="global-contact-toast" aria-live="polite">Tersalin ke clipboard!</div>
+          </div>
+
+          <!-- Interactive Burgundy Wax Seal Stamp Button -->
+          <div class="wax-seal-interactive-block">
+            <button class="wax-seal" id="interactive-wax-seal" aria-label="Tekan untuk membubuhkan cap segel lilin bertanggal">
+              <svg viewBox="0 0 100 100" width="70" height="70" aria-hidden="true">
+                <circle cx="50" cy="50" r="46" fill="none" stroke="#FAF6EE" stroke-width="2" stroke-dasharray="3,3"/>
+                <circle cx="50" cy="50" r="38" fill="none" stroke="#FAF6EE" stroke-width="1.5"/>
+                <text x="50" y="60" font-family="'Cinzel', serif" font-size="30" font-weight="bold" fill="#FAF6EE" text-anchor="middle">A</text>
+              </svg>
+            </button>
+            <div class="seal-meta-output">
+              <span class="seal-prompt" id="seal-status-text">TEKAN UNTUK MENYEGEL DOKUMEN</span>
+              <span class="seal-timestamp" id="seal-timestamp-text">STATUS: BELUM TERSEGEL</span>
+            </div>
+          </div>
+
+          <p class="copyright-line">&copy; 2026 ARTTHA. Dirancang dengan intensi, bukan cetakan template.</p>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Real Dotfiles Config Data for Section 4 -->
+  <script type="application/json" id="dotfiles-data">
+  {
+    "hyprland": {
+      "title": "~/.config/hypr/hyprland.conf (NVIM)",
+      "badge": "WAYLAND",
+      "primaryCode": "# Hyprland Compositor Config\nautostart = waybar & mako & hyprpaper\n\ngeneral {\n    gaps_in = 6\n    gaps_out = 8\n    border_size = 2\n    col.active_border = rgb(5E1224)\n    col.inactive_border = rgb(EAE2D3)\n    layout = dwindle\n}\n\ndecoration {\n    rounding = 8\n    blur {\n        enabled = true\n        size = 4\n        passes = 2\n    }\n}",
+      "secondaryTitle": "fish ~ artetha@arch: hyprctl",
+      "secondaryCode": "artetha in ~ on main [λ] hyprctl monitors\nMonitor eDP-1 (ID 0): 1920x1200@60Hz at 0x0 (active)\nactive workspace: 1 (main)\n\nartetha in ~ on main [λ] hyprctl version\nHyprland, built from branch main at commit 4f7b2a9\nWayland-native compositor running smoothly."
+    },
+    "waybar": {
+      "title": "~/.config/waybar/config.jsonc",
+      "badge": "JSON",
+      "primaryCode": "{\n    \"layer\": \"top\",\n    \"position\": \"top\",\n    \"height\": 32,\n    \"spacing\": 4,\n    \"modules-left\": [\"hyprland/workspaces\"],\n    \"modules-center\": [\"clock\"],\n    \"modules-right\": [\"pulseaudio\", \"memory\", \"cpu\", \"battery\"]\n}",
+      "secondaryTitle": "~/.config/waybar/style.css",
+      "secondaryCode": "* {\n    border: none;\n    font-family: 'JetBrains Mono';\n    font-size: 11px;\n}\n#workspaces button.active {\n    background: #5E1224;\n    color: #FAF6EE;\n    border-radius: 4px;\n}"
+    },
+    "kitty": {
+      "title": "~/.config/kitty/kitty.conf",
+      "badge": "GPU-TERM",
+      "primaryCode": "font_family      JetBrains Mono\nbold_font        auto\nfont_size        12.0\nbackground_opacity 0.94\nwindow_padding_width 14\n\n# Warm Beige & Deep Burgundy Palette\nbackground #1A1415\nforeground #FAF6EE\nselection_background #5E1224",
+      "secondaryTitle": "~/.config/fish/config.fish",
+      "secondaryCode": "set -g fish_greeting \"\"\nset -gx EDITOR nvim\n\nfunction fish_prompt\n    echo -n (set_color 5E1224)'[λ] '(set_color FAF6EE)(prompt_pwd)' > '\nend"
+    },
+    "fastfetch": {
+      "title": "~/.config/fastfetch/config.jsonc",
+      "badge": "SYS-SPEC",
+      "primaryCode": "{\n    \"$schema\": \"https://github.com/fastfetch-cli/fastfetch\",\n    \"modules\": [\n        \"title\",\n        \"os\",\n        \"host\",\n        \"kernel\",\n        \"uptime\",\n        \"packages\",\n        \"shell\",\n        \"wm\",\n        \"theme\",\n        \"terminal\",\n        \"cpu\",\n        \"memory\"\n    ]\n}",
+      "secondaryTitle": "fastfetch output (Arch Linux)",
+      "secondaryCode": "OS: Arch Linux x86_64\nHost: ThinkPad X1 Carbon Gen 9\nKernel: Linux 6.12.1-arch1-1\nUptime: 14 days, 6 hours\nWM: Hyprland (Wayland)\nTerminal: kitty (Fish 3.7.1)\nMemory: 4.21 GiB / 15.35 GiB"
+    }
+  }
+  </script>
+
+</body>
+</html>
